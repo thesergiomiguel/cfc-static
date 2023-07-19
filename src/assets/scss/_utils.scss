@@ -1,0 +1,18 @@
+// Assortment of small utility classes that make no sense anywhere else
+@use "theme";
+
+.no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.underline {
+  text-decoration: underline;
+}
