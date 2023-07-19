@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "sass:string";
+@use "functions" as fx;
+
+// Colors
+$orangered: #ff2a0f;
+$purple: #6200ff;
+$purple-alt: #590df5;
+$browngray: #acacac;
+$white: #ffffff;
+$black: #000000;
+
+// Lengths
+$padding-inline: fx.rem(20);
+$padding-inline-md: fx.rem(30);

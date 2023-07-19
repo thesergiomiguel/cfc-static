@@ -1,0 +1,24 @@
+@use "sass:meta";
+@use "sass:math";
+@use "settings";
+
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function rem($px) {
+  $base-font-size: strip-unit(settings.$font-size);
+  $unitless: strip-unit($px);
+  $result: math.div($unitless, $base-font-size);
+
+  @return #{$result}rem;
+}
+
+// Doesn't replace grids, but sometimes it's all we need
+@function cols($count, $total: 12) {
+  @return calc(($count / $total) * 100%);
+}
