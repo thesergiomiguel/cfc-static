@@ -3,6 +3,7 @@ import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { Homepage } from "./pages/homepage";
 import { Registration } from "./pages/registration";
+import "./assets/scss/index.scss";
 
 export function App() {
   return (
