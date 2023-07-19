@@ -1,0 +1,253 @@
+@use "css/settings";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/theme";
+@use "css/components/sidebar";
+
+.Header {
+  --item-font-size: #{fx.rem(18)};
+  --item-margin-right: #{fx.rem(20)};
+
+  padding-inline: theme.$padding-inline;
+  padding-block: fx.rem(20);
+  position: sticky;
+  top: 0;
+  z-index: 11;
+
+  &__nav {
+    @extend .Sidebar;
+  }
+
+  @include mx.md-up {
+    padding-inline: theme.$padding-inline-md;
+  }
+
+  @include mx.xl-up {
+    --item-font-size: #{fx.rem(22)};
+    --item-margin-right: #{fx.rem(40)};
+
+    // Because sass is very weird about using @extend across media queries, we
+    // need to (mostly) recreate .wide-container here.
+    padding-inline: theme.$padding-inline-md;
+    height: fx.rem(64);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    z-index: 11;
+
+    &__nav {
+      // Unset all .sidebar properties.
+      position: static;
+      width: auto;
+      opacity: 1;
+      backdrop-filter: unset;
+      -webkit-backdrop-filter: unset;
+      border-radius: unset;
+      transform: unset;
+      transform-origin: unset;
+      overflow-y: unset;
+      transition: none;
+      flex: 1 0 auto;
+      z-index: unset;
+    }
+
+    &__logo {
+      flex: 0 1 100%;
+    }
+  }
+
+  @include mx.xxl-up {
+    --item-font-size: #{fx.rem(27)};
+    --item-margin-right: #{fx.rem(40)};
+  }
+
+  $max-with-padding: calc(
+    settings.$max-content-width + theme.$padding-inline-md * 2
+  );
+
+  @include mx.from($max-with-padding) {
+    // Limit content area to $max-content-width
+    padding-inline: calc((100vw - settings.$max-content-width) / 2);
+  }
+}
+
+.Logo {
+  &--small {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  &--large {
+    display: none;
+
+    font-family: "Borna";
+    font-weight: 500;
+    font-size: fx.rem(35);
+    min-width: fx.rem(200);
+    max-width: fx.rem(250);
+    margin-right: var(--item-margin-right);
+  }
+
+  &__text {
+    font-size: fx.rem(16);
+    font-weight: 500;
+    line-height: 1.56;
+    text-transform: uppercase;
+  }
+
+  &__shell {
+    width: fx.rem(34);
+    fill: theme.$purple;
+    cursor: pointer;
+    transition: transform 150ms ease-out;
+
+    &--toggled {
+      transform: rotate(720deg);
+    }
+  }
+
+  @include mx.xl-up {
+    &--small,
+    &__text,
+    &__shell {
+      display: none;
+    }
+
+    &--large {
+      display: flex;
+    }
+  }
+
+  @include mx.xl-up {
+    &--large {
+      max-width: fx.rem(398);
+    }
+  }
+}
+
+.Nav {
+  border-top: 1px solid black;
+  margin-top: fx.rem(100);
+  padding-inline: 0;
+  list-style: none;
+
+  &__item {
+    @include mx.text(25, 1.2, normal, black);
+
+    padding-block: fx.rem(18) fx.rem(16);
+    padding-inline: fx.rem(15) fx.rem(34);
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+    &--purple {
+      color: theme.$purple;
+    }
+  }
+
+  @include mx.xl-up {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fx.rem(64);
+
+    &__item {
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      font-size: var(--item-font-size);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      &:not(:last-child) {
+        margin-right: var(--item-margin-right);
+      }
+    }
+  }
+}
+
+.Subnav {
+  cursor: pointer;
+  padding: 0;
+
+  &__title {
+    position: relative;
+    width: 100%;
+    padding-block: fx.rem(18) fx.rem(16);
+    padding-inline: fx.rem(15) fx.rem(34);
+
+    &::after {
+      content: "+";
+      position: absolute;
+      right: fx.rem(34);
+    }
+  }
+
+  &__nav {
+    display: none;
+    margin-left: fx.rem(20);
+
+    > li {
+      @include mx.text(25, 1.2, normal, black);
+
+      padding-block: fx.rem(18) fx.rem(16);
+      padding-inline: fx.rem(35) fx.rem(34);
+      border-top: 1px solid black;
+    }
+  }
+
+  &[data-subnav-state="1"] {
+    .Subnav__title {
+      &::after {
+        content: "-";
+      }
+    }
+
+    .Subnav__nav {
+      display: block;
+    }
+  }
+
+  @include mx.xl-up {
+    position: relative;
+
+    &__title {
+      position: unset;
+      width: unset;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      &::after {
+        content: none !important;
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      top: 100%;
+      left: -#{fx.rem(20)};
+      margin: 0;
+      border-inline: 1px solid black;
+
+      li {
+        border: 0;
+        border-bottom: 1px solid black;
+        padding-inline: fx.rem(20);
+        font-size: var(--item-font-size);
+        font-weight: 500;
+      }
+    }
+  }
+}

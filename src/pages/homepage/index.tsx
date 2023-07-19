@@ -1,3 +1,3 @@
 export function Homepage() {
-  return <main>homepage here</main>;
+  return <main style={{ height: "100vh" }}>homepage here</main>;
 }

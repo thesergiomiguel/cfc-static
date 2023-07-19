@@ -1,0 +1,55 @@
+@use "css/utils";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.Sidebar {
+  @extend .no-scrollbar;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100vw - fx.rem(74));
+  opacity: 0;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 0 50px 50px 0;
+  z-index: 11;
+  transform: scaleX(0);
+  transform-origin: left;
+  overflow-y: scroll;
+
+  @include mx.sm-up {
+    width: fx.rem(478);
+  }
+
+  ~ .Sidebar__backdrop {
+    display: none;
+  }
+
+  &--closing {
+    transition: transform 125ms linear, opacity 125ms linear;
+  }
+
+  &--open {
+    transition: transform 125ms linear, opacity 125ms linear;
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.Sidebar__backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+
+  @at-root {
+    .with-backdrop & {
+      display: block;
+    }
+  }
+}
