@@ -1,0 +1,101 @@
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/components/containers";
+@use "css/utils";
+@use "css/theme";
+
+.Editorial {
+  margin-bottom: fx.rem(66);
+
+  @include mx.md-up {
+    margin-bottom: fx.rem(197);
+  }
+
+  &__content {
+    @extend .wide-container;
+
+    padding-block: fx.rem(15) fx.rem(30);
+
+    @include mx.xxl-up {
+      padding-block: fx.rem(30) fx.rem(50);
+    }
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  &__window {
+    @extend .no-scrollbar;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+    box-sizing: content-box;
+  }
+}
+
+.Editorial .BlogPost {
+  font-size: fx.rem(30);
+  line-height: 1.17;
+  margin: fx.rem(15) 0 fx.rem(30);
+  flex: 0 0 80%;
+  text-align: center;
+  margin-right: fx.rem(10);
+
+  &__title {
+    position: relative;
+
+    &:hover {
+      &::before {
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        display: block;
+        background-image: var(--post-img-src);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  &__author {
+    margin-top: fx.rem(15);
+    font-size: fx.rem(16);
+    line-height: 1.31;
+  }
+
+  &__tags {
+    display: block;
+    color: theme.$browngray;
+
+    > a {
+      &:not(:last-child) {
+        margin-right: fx.rem(15);
+      }
+    }
+  }
+
+  @include mx.md-up {
+    flex: 0 0 fx.cols(1, 3);
+  }
+
+  @include mx.xxl-up {
+    font-size: fx.rem(65);
+    line-height: 1.15;
+
+    &__author {
+      font-size: fx.rem(32);
+      line-height: 1.31;
+    }
+  }
+}

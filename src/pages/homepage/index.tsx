@@ -1,3 +1,4 @@
+import { Editorial } from "./Editorial";
 import { FeaturedCalls } from "./FeaturedCalls";
 import { Hero } from "./Hero";
 
@@ -6,6 +7,7 @@ export function Homepage() {
     <main>
       <Hero />
       <FeaturedCalls />
+      <Editorial />
     </main>
   );
 }
