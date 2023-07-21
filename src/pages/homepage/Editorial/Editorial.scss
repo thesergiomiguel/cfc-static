@@ -30,6 +30,7 @@
   &__window {
     @extend .no-scrollbar;
 
+    overscroll-behavior-x: none;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

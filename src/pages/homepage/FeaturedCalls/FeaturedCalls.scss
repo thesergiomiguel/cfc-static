@@ -35,6 +35,8 @@
   &__window {
     @extend .no-scrollbar;
 
+    overscroll-behavior-x: none;
+
     @include mx.md-up {
       display: flex;
       flex-direction: row;
