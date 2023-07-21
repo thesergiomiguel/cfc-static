@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ReactComponent as LogoFull } from "img/logos/logo-full.svg";
 import { ReactComponent as LogoShell } from "img/logos/logo-shell.svg";
 import "./Header.scss";
@@ -36,26 +35,26 @@ export function Header() {
       <nav className="Header__nav" id="main-nav-menu">
         <menu className="Nav">
           <li className="Nav__item">
-            <Link to="/announce-call">Announce Call</Link>
+            <a href="/announce-call">Announce Call</a>
           </li>
           <li className="Nav__item">
-            <Link to="/search-call">Search Call</Link>
+            <a href="/search-call">Search Call</a>
           </li>
           <li className="Nav__item">
-            <Link to="/community">Browse Community</Link>
+            <a href="/community">Browse Community</a>
           </li>
           <li className="Nav__item Subnav" data-subnav-state="0">
             <div className="Subnav__title">Editorial</div>
 
             <nav className="Subnav__nav">
               <li>
-                <Link to="/blog">Blog</Link>
+                <a href="/blog">Blog</a>
               </li>
               <li>
-                <Link to="/events">CfC Events</Link>
+                <a href="/events">CfC Events</a>
               </li>
               <li>
-                <Link to="/podcasts">Podcasts</Link>
+                <a href="/podcasts">Podcasts</a>
               </li>
             </nav>
           </li>

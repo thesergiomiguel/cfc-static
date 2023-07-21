@@ -5,12 +5,12 @@ import { Homepage } from "./pages/homepage";
 import { Registration } from "./pages/registration";
 import "./assets/scss/index.scss";
 import { useEffect } from "react";
-import { setupSidebars } from "./dom-scripts/sidebars";
+import { setup } from "./dom-scripts/on-dom-content-loaded";
 
 export function App() {
   useEffect(() => {
-    // Once React gets removed, these should go inside a listener for DOMContentLoaded.
-    setupSidebars();
+    // This should be inside a <script /> element at the bottom of the page.
+    setup();
   }, []);
 
   return (
