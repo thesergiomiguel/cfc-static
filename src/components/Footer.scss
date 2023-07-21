@@ -1,0 +1,154 @@
+@use "css/settings";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/components/containers";
+
+.Footer {
+  @extend .wide-container;
+
+  padding-block: fx.rem(50) fx.rem(30);
+  border-top: 1px solid black;
+  font-size: fx.rem(15);
+
+  &__copyright {
+    &::after {
+      content: " CfC";
+      display: inline;
+
+      @include mx.xxl-up {
+        content: " Call for Curators";
+      }
+    }
+  }
+
+  &__navs {
+    font-size: inherit;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: center;
+
+    &--sitemap {
+      flex: 0 0 cols(2, 3);
+      line-height: 1.31;
+      position: relative;
+      top: -4px; // so it lines down with &-social
+      text-decoration: none;
+    }
+
+    &--social {
+      line-height: 1.64;
+      text-decoration: underline;
+    }
+
+    @include mx.md-up {
+      font-size: fx.rem(21);
+
+      &-sitemap {
+        flex-basis: cols(3);
+      }
+    }
+
+    @include mx.lg-up {
+      &-sitemap,
+      &-social {
+        line-height: 1.48;
+        font-weight: 500;
+        position: static;
+      }
+    }
+
+    @include mx.xl-up {
+      --fs-multiplier: 0.865;
+      font-size: calc(var(--fs-multiplier) * fx.rem(21));
+
+      flex-direction: row;
+      align-items: center;
+
+      nav > ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        li:not(:last-child) {
+          margin-right: fx.rem(20);
+        }
+      }
+    }
+
+    @include mx.xxl-up {
+      --fs-multiplier: 0.9;
+    }
+
+    @include mx.from(settings.$max-content-width) {
+      font-size: fx.rem(21);
+
+      nav > ul li:not(:last-child) {
+        margin-right: fx.rem(30);
+      }
+    }
+  }
+
+  // Disable all list stuff for navs within the footer.
+  nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.Newsletter {
+  display: none;
+
+  &__wrapper {
+    margin-left: auto;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: fx.rem(424);
+    max-width: 100%;
+    font-size: fx.rem(21);
+    line-height: 1.41;
+  }
+
+  &__input {
+    margin-left: fx.rem(37);
+
+    input {
+      font-family: "Borna";
+      font-size: inherit;
+      line-height: inherit;
+      border: 0;
+      padding: 0;
+      padding-right: fx.rem(16);
+      background-color: transparent;
+      width: 100%;
+
+      &:active,
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  &__footer {
+    button {
+      border: 0;
+      background-color: transparent;
+      outline: 0;
+      padding: 0;
+      color: black;
+      font-family: "Borna";
+      font-size: inherit;
+    }
+  }
+
+  @include mx.xxl-up {
+    display: block;
+    text-align: right;
+    margin-bottom: fx.rem(40);
+  }
+}

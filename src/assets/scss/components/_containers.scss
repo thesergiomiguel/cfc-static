@@ -1,0 +1,20 @@
+@use "css/theme";
+@use "css/settings";
+@use "css/mixins" as mx;
+
+.wide-container {
+  padding-inline: theme.$padding-inline;
+
+  @include mx.md-up() {
+    padding-inline: theme.$padding-inline-md;
+  }
+
+  $max-with-padding: calc(
+    settings.$max-content-width + theme.$padding-inline-md * 2
+  );
+
+  @include mx.from($max-with-padding) {
+    // Limit content area to $max-content-width
+    padding-inline: calc((100vw - settings.$max-content-width) / 2);
+  }
+}
