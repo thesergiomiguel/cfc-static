@@ -1,3 +1,4 @@
+import { setupCarousels } from "./carousel";
 import { setupSidebars } from "./sidebars";
 import { setupNavs } from "./subnavs";
 
@@ -11,6 +12,7 @@ function onDOMContentLoaded(cb: () => void) {
 
 export function init() {
   onDOMContentLoaded(() => {
+    setupCarousels();
     setupSidebars();
     setupNavs();
   });
