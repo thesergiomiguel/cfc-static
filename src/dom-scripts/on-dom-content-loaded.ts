@@ -1,4 +1,5 @@
-import { setup as setupSidebars } from "./sidebars";
+import { setupSidebars } from "./sidebars";
+import { setupNavs } from "./subnavs";
 
 function onDOMContentLoaded(cb: () => void) {
   if (document.readyState === "loading") {
@@ -8,8 +9,9 @@ function onDOMContentLoaded(cb: () => void) {
   }
 }
 
-export function setup() {
+export function init() {
   onDOMContentLoaded(() => {
     setupSidebars();
+    setupNavs();
   });
 }

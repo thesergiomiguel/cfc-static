@@ -5,12 +5,12 @@ import { Homepage } from "./pages/homepage";
 import { Registration } from "./pages/registration";
 import "./assets/scss/index.scss";
 import { useEffect } from "react";
-import { setup } from "./dom-scripts/on-dom-content-loaded";
+import { init } from "./dom-scripts/on-dom-content-loaded";
 
 export function App() {
   useEffect(() => {
     // This should be inside a <script /> element at the bottom of the page.
-    setup();
+    init();
   }, []);
 
   return (

@@ -31,7 +31,7 @@ function close(element: HTMLElement | null) {
   }, 250);
 }
 
-export function setup() {
+export function setupSidebars() {
   const openers = document.querySelectorAll("[data-open-sidebar]");
   const closers = document.querySelectorAll("[data-close-sidebar]");
 

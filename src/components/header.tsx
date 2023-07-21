@@ -1,16 +1,8 @@
 import { ReactComponent as LogoFull } from "img/logos/logo-full.svg";
 import { ReactComponent as LogoShell } from "img/logos/logo-shell.svg";
 import "./Header.scss";
-import { useEffect } from "react";
-import { setupSubnavs } from "../dom-scripts/subnavs";
 
 export function Header() {
-  useEffect(() => {
-    setupSubnavs();
-    // TODO:
-    // setupShellToggle()
-  }, []);
-
   return (
     <header className="Header">
       <div className="Header__logo">
