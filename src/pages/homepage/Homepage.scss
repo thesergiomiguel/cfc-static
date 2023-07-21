@@ -1,0 +1,244 @@
+@use "css/theme";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/components/containers";
+
+.Hero {
+  @extend .wide-container;
+
+  text-align: center;
+  margin-block: fx.rem(50) fx.rem(35);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header header header"
+    "main main main";
+
+  &__header {
+    grid-area: header;
+    margin-inline: auto;
+
+    h1 {
+      @include mx.text(50, 1.1);
+
+      margin-bottom: fx.rem(20);
+    }
+  }
+
+  &__main {
+    grid-area: main;
+
+    width: fx.cols(2, 3);
+    margin-inline: auto;
+  }
+
+  &__details {
+    @include mx.text(12, 1.42, $color: theme.$browngray);
+  }
+
+  &__animation {
+    --tagline-item-margin-block: #{fx.rem(20)};
+    --tagline-item-height: #{fx.rem(50)};
+
+    @include mx.text();
+
+    margin-inline: auto;
+    overflow-y: hidden;
+    position: relative;
+    height: calc(
+      var(--tagline-item-height) + (var(--tagline-item-margin-block) * 2)
+    );
+    top: calc(var(--tagline-item-margin-block) * -1);
+    margin-bottom: calc(var(--tagline-item-margin-block) * -2);
+    z-index: -1;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: var(--tagline-item-margin-block);
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(white, transparent);
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(transparent, white);
+    }
+
+    &__window {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      // animation: 5s ease-in-out 0s alternate both infinite bounce;
+      animation-delay: 0;
+      animation-name: bounce;
+      animation-iteration-count: infinite;
+      // animation-timing-function: ease-out;
+      animation-timing-function: cubic-bezier(0.6, -0.28, 0.74, 0.05);
+      animation-fill-mode: forwards;
+      animation-duration: 7s;
+
+      @keyframes bounce {
+        0% {
+          top: 0;
+        }
+
+        43% {
+          top: 0;
+        }
+
+        50% {
+          top: calc(
+            (var(--tagline-item-height) + var(--tagline-item-margin-block)) * -1
+          );
+        }
+
+        93% {
+          top: calc(
+            (var(--tagline-item-height) + var(--tagline-item-margin-block)) * -1
+          );
+        }
+
+        100% {
+          top: 0;
+        }
+      }
+    }
+
+    &-item {
+      max-height: var(--tagline-item-height);
+      height: var(--tagline-item-height);
+      margin-block: var(--tagline-item-margin-block);
+      font-weight: inherit;
+    }
+
+    @include mx.md-up {
+      --tagline-item-height: #{fx.rem(65)};
+      --tagline-item-margin-block: #{fx.rem(30)};
+    }
+
+    @include mx.xl-up {
+      font-weight: 500;
+    }
+
+    @include mx.xxl-up {
+      --tagline-item-height: #{fx.rem(72)};
+      --tagline-item-margin-block: #{fx.rem(35)};
+    }
+
+    @include mx.xxxl-up {
+      --tagline-item-height: #{fx.rem(84)};
+      // --tagline-item-margin-block: #{fx.rem(40)};
+    }
+  }
+
+  &__getstarted {
+    color: theme.$purple;
+    margin-block: fx.rem(30) fx.rem(10);
+  }
+
+  @include mx.sm-up {
+    grid-template-columns: 0.5fr repeat(2, 1fr) 0.5fr;
+    grid-template-areas:
+      ". header header ."
+      ". main main .";
+
+    margin-block: fx.rem(50) fx.rem(50);
+  }
+
+  @include mx.md-up {
+    grid-template-columns: fx.rem(20) auto fx.rem(20);
+    grid-template-areas:
+      ". header ."
+      ". main .";
+
+    &__header {
+      h1 {
+        @include mx.text(100, 0.95);
+      }
+    }
+
+    &__animation {
+      font-size: fx.rem(24);
+    }
+
+    &__details {
+      font-size: fx.rem(19);
+    }
+  }
+
+  @include mx.xl-up {
+    --fs-multiplier: 0.73;
+
+    margin-block: fx.rem(100) fx.rem(150);
+    grid-gap: fx.rem(15);
+    grid-template-rows: auto;
+    grid-template-columns: 0.5fr repeat(6, 1fr) 1.5fr 1.5fr repeat(2, 1fr) 0.5fr;
+    grid-template-areas: ". header header header header header header header main main main .";
+
+    &__header {
+      text-align: left;
+      max-width: unset;
+
+      h1 {
+        font-size: calc(var(--fs-multiplier) * fx.rem(150));
+        line-height: 0.93;
+      }
+    }
+
+    &__main {
+      width: 100%;
+      align-self: end;
+    }
+
+    &__animation {
+      font-size: calc(var(--fs-multiplier) * fx.rem(32));
+      line-height: 1.31;
+      font-weight: 500;
+    }
+
+    &__details {
+      font-size: fx.rem(21);
+      font-weight: 500;
+      line-height: 1.48;
+    }
+
+    &__getstarted {
+      margin-block: calc(var(--fs-multiplier) * fx.rem(50))
+        calc(var(--fs-multiplier) * fx.rem(20));
+
+      > a.cfc_btn {
+        font-size: calc(var(--fs-multiplier) * fx.rem(32));
+      }
+    }
+  }
+
+  @include mx.xxl-up {
+    --fs-multiplier: 0.84;
+
+    grid-gap: fx.rem(20);
+
+    &__header {
+      max-width: unset;
+    }
+  }
+
+  @include mx.xxxl-up {
+    --fs-multiplier: 0.95;
+  }
+
+  @include mx.from-widest {
+    --fs-multiplier: 1;
+
+    grid-template-areas: ". header header header header header header . main main main .";
+    grid-template-columns: repeat(6, 1fr) 1.5fr 0.5fr repeat(4, 1fr);
+  }
+}

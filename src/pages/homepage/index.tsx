@@ -1,3 +1,9 @@
+import { Hero } from "./Hero";
+
 export function Homepage() {
-  return <main style={{ height: "100vh" }}>homepage here</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }

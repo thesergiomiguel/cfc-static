@@ -1,0 +1,58 @@
+@use "css/theme";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.Button {
+  display: inline-block;
+  color: theme.$purple;
+  border: 1px solid theme.$purple;
+  border-radius: fx.rem(49);
+  background-color: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: theme.$purple;
+  }
+
+  &--s {
+    padding: fx.rem(15) fx.rem(40);
+    font-size: fx.rem(16);
+    line-height: 1.31;
+    border-radius: fx.rem(25);
+
+    @include mx.md-up {
+      padding: fx.rem(20) fx.rem(30);
+      font-size: fx.rem(16);
+      border-radius: fx.rem(39);
+    }
+  }
+
+  &--m {
+    padding: fx.rem(15) fx.rem(20);
+    font-size: fx.rem(25);
+    line-height: 1.2;
+    border-radius: fx.rem(30);
+
+    @include mx.md-up {
+      padding: fx.rem(20) fx.rem(30);
+      font-size: fx.rem(32);
+      line-height: 1.31;
+      border-radius: fx.rem(39);
+    }
+  }
+
+  &--l {
+    padding: fx.rem(20) fx.rem(30);
+    font-size: fx.rem(32);
+    line-height: 1.31;
+    border-radius: fx.rem(39);
+
+    @include mx.xxl-up {
+      font-size: fx.rem(48);
+      line-height: 1.21;
+      border-radius: fx.rem(49);
+    }
+  }
+}
