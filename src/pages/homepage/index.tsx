@@ -1,6 +1,7 @@
 import { Editorial } from "./Editorial";
 import { FeaturedCalls } from "./FeaturedCalls";
 import { Hero } from "./Hero";
+import { Testimonials } from "./Testimonials";
 
 export function Homepage() {
   return (
@@ -8,6 +9,7 @@ export function Homepage() {
       <Hero />
       <FeaturedCalls />
       <Editorial />
+      <Testimonials />
     </main>
   );
 }

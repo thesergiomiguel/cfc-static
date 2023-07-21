@@ -1,6 +1,6 @@
 type Props = {
   title: string;
-  distance?: number;
+  distance?: number | "block";
   targetId: string;
 };
 
