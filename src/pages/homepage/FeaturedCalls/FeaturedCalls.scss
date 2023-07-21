@@ -1,0 +1,122 @@
+@use "css/theme";
+@use "css/breakpoints";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/utils";
+@use "css/components/containers";
+
+.Featured {
+  margin-bottom: fx.rem(66);
+
+  @include mx.md-up {
+    margin-bottom: fx.rem(197);
+  }
+
+  &__content {
+    border-top: 1px solid black;
+    width: 100%;
+    overflow-x: hidden;
+
+    @extend .wide-container;
+
+    // Because we can't extend placeholders across media queries,
+    // we need to reset it immediately for mobile so that it only
+    // gets included on larger resolutions.
+    @include mx.below(breakpoints.$md) {
+      padding-inline: 0;
+    }
+
+    @include mx.md-up {
+      border-block: 1px solid black;
+      padding-block: fx.rem(30) fx.rem(50);
+    }
+  }
+
+  &__window {
+    @extend .no-scrollbar;
+
+    @include mx.md-up {
+      display: flex;
+      flex-direction: row;
+      max-width: 100%;
+      overflow-x: scroll;
+    }
+  }
+}
+
+.Featured .Call {
+  @extend .wide-container;
+
+  &:nth-child(n + 4) {
+    // On smaller resolutions, hide all blocks after the third one.
+    display: none;
+  }
+
+  font-size: fx.rem(16);
+  line-height: 1.31;
+  border-bottom: 1px solid black;
+  padding-block: fx.rem(15);
+  width: 100%;
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__thumbnail {
+    margin-block: fx.rem(15) fx.rem(10);
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include mx.md-up {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__type {
+    color: theme.$browngray;
+  }
+
+  &__timestamp {
+    &::after {
+      content: "→";
+      display: inline-block;
+      margin-left: 0.5ch;
+    }
+  }
+
+  @include mx.md-up {
+    --fs-multiplier: 0.65;
+
+    // 5 columns.
+    flex: 0 0 fx.cols(5);
+    padding-inline: 0;
+    font-size: calc(var(--fs-multiplier) * fx.rem(32));
+    border: 0;
+
+    &,
+    &:nth-child(n + 4) {
+      display: block;
+    }
+
+    &:not(:last-child) {
+      margin-right: fx.rem(20);
+    }
+  }
+
+  @include mx.lg-up {
+    --fs-multiplier: 0.85;
+  }
+
+  @include mx.xl-up {
+    --fs-multiplier: 1;
+  }
+}

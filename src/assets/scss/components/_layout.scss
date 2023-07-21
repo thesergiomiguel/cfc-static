@@ -1,0 +1,86 @@
+@use "css/theme";
+@use "css/components/containers";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.SectionHeader {
+  @extend .wide-container;
+
+  position: relative;
+
+  &__heading {
+    @include mx.text(25, 1.2, normal, black);
+
+    margin: 0 0 fx.rem(16);
+    text-transform: uppercase;
+  }
+
+  &__carousel {
+    padding: inherit;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      @include mx.text(32, 1, 400, theme.$browngray);
+
+      cursor: pointer;
+      background: transparent;
+      padding: 0;
+      font-family: "Borna";
+
+      &,
+      &:active {
+        outline: 0;
+        border: 0;
+      }
+    }
+  }
+
+  @include mx.md-up {
+    &__heading {
+      @include mx.text(46, 1, normal, black);
+    }
+
+    &__carousel {
+      display: block;
+    }
+  }
+
+  @include mx.lg-up {
+    &__heading {
+      font-size: fx.rem(48);
+    }
+  }
+}
+
+.SectionFooter {
+  h2 {
+    @extend .wide-container;
+
+    font-size: fx.rem(16);
+    font-weight: normal;
+    line-height: 1.31;
+    color: theme.$browngray;
+    text-align: right;
+    margin-top: fx.rem(15);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    a {
+      &:link,
+      &:visited,
+      &:focus,
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    @include mx.md-up {
+      font-size: fx.rem(32);
+    }
+  }
+}
