@@ -42,6 +42,7 @@
       flex-direction: row;
       max-width: 100%;
       overflow-x: scroll;
+      scroll-snap-type: x proximity;
     }
   }
 }
@@ -103,6 +104,8 @@
     padding-inline: 0;
     font-size: calc(var(--fs-multiplier) * fx.rem(32));
     border: 0;
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
 
     &,
     &:nth-child(n + 4) {

@@ -7,6 +7,11 @@ import "./assets/scss/index.scss";
 import { useEffect } from "react";
 import { init } from "./dom-scripts/on-dom-content-loaded";
 
+// TODO:
+// newsletter widget
+// register sidebar
+// logo sidebar toggle (spin + close)
+
 export function App() {
   useEffect(() => {
     // This should be inside a <script /> element at the bottom of the page.

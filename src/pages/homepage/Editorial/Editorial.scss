@@ -31,6 +31,7 @@
     @extend .no-scrollbar;
 
     overscroll-behavior-x: none;
+    scroll-snap-type: x proximity;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -48,6 +49,8 @@
   flex: 0 0 80%;
   text-align: center;
   margin-right: fx.rem(10);
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
 
   &__title {
     position: relative;
