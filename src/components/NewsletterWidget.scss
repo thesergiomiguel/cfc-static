@@ -1,0 +1,131 @@
+@use "css/theme";
+@use "css/settings";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.NewsletterBar {
+  opacity: 0;
+  background-color: theme.$purple;
+
+  position: absolute;
+  left: -1000%;
+  bottom: 0;
+  width: 100vw;
+  max-width: settings.$max-content-width;
+
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin-inline: auto;
+  padding: fx.rem(25) fx.rem(30);
+  font-size: fx.rem(25);
+
+  &--visible {
+    position: sticky;
+    left: unset;
+    animation: 0s 1s forwards wild-newsletter-bar-appears;
+  }
+
+  &__title {
+    h2 {
+      color: white;
+      font-size: inherit;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: left;
+    }
+  }
+
+  &__content {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: "Borna";
+    font-size: inherit;
+    font-weight: normal;
+    color: white;
+    width: 100%;
+  }
+
+  &__footer {
+    display: none;
+  }
+
+  @include mx.lg-up {
+    justify-content: flex-start;
+
+    &__content {
+      flex: 0 0 50%;
+      margin-left: fx.rem(62);
+    }
+
+    &__footer {
+      display: flex;
+      margin-left: auto;
+      align-self: center;
+    }
+  }
+
+  @include mx.xl-up {
+    font-size: fx.rem(48);
+    padding: 0 fx.rem(60);
+  }
+}
+
+@keyframes wild-newsletter-bar-appears {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.NewsletterBar .Button {
+  font-family: "Borna";
+  font-size: fx.rem(20);
+  font-weight: normal;
+  color: white;
+  border: 0;
+  background: transparent;
+  width: fx.rem(34);
+  height: fx.rem(34);
+  padding: 0;
+  cursor: pointer;
+
+  &--rounded {
+    border-radius: 50%;
+    border: 1px solid white;
+
+    @include mx.xl-up {
+      align-self: center;
+      font-size: fx.rem(45);
+      width: fx.rem(49);
+      height: fx.rem(49);
+      padding-top: fx.rem(4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

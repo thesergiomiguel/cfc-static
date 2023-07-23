@@ -6,6 +6,7 @@ import { Registration } from "./pages/registration";
 import "./assets/scss/index.scss";
 import { useEffect } from "react";
 import { init } from "./dom-scripts/on-dom-content-loaded";
+import { NewsletterWidget } from "./components/NewsletterWidget";
 
 // TODO:
 // newsletter widget
@@ -28,6 +29,8 @@ export function App() {
       </Routes>
 
       <Footer />
+      <NewsletterWidget />
+
       <div className="Sidebar__backdrop" />
     </BrowserRouter>
   );
