@@ -12,7 +12,7 @@ export function Header() {
           </a>
           <div
             id="logo-toggle"
-            data-open-sidebar="main-nav-menu"
+            data-toggle-sidebar="main-nav-menu"
             className="Logo__shell"
           >
             <LogoShell />

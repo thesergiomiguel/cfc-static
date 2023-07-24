@@ -1,7 +1,9 @@
 // Sets listeners on elements with one of:
 //  - [data-open-sidebar="%id"]
 //  - [data-close-sidebar="%id"]
-// Besides, [data-open-delay="%ms"] can be used to delay
+//  - [data-toggle-sidebar="%id"]
+//
+// Besides those, [data-open-delay="%ms"] can be used to delay
 // a sidebar's opening
 
 const CLOSING_CLASS_NAME = "Sidebar--closing";
@@ -31,9 +33,22 @@ function close(element: HTMLElement | null) {
   }, 250);
 }
 
+function toggle(element: HTMLElement | null) {
+  if (!element) {
+    return;
+  }
+
+  if (element.classList.contains(OPEN_CLASS_NAME)) {
+    return close(element);
+  }
+
+  open(element);
+}
+
 export function setupSidebars() {
   const openers = document.querySelectorAll("[data-open-sidebar]");
   const closers = document.querySelectorAll("[data-close-sidebar]");
+  const togglers = document.querySelectorAll("[data-toggle-sidebar]");
 
   closers.forEach((element) => {
     const id = element.getAttribute("data-close-sidebar");
@@ -65,6 +80,20 @@ export function setupSidebars() {
     }
 
     element.addEventListener("click", () => open(target));
+  });
+
+  togglers.forEach((element) => {
+    const id = element.getAttribute("data-toggle-sidebar");
+
+    if (!id) {
+      return;
+    }
+
+    const target = document.getElementById(id);
+
+    console.log(target);
+
+    element.addEventListener("click", () => toggle(target));
   });
 
   // Setup backdrop to close all open sidebars on click.
