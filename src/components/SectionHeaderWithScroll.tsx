@@ -19,10 +19,10 @@ export function SectionHeaderWithScroll(props: Props) {
         data-target={props.targetId}
       >
         <button data-left>
-          <LeftArrow width={50} height={50} />
+          <LeftArrow />
         </button>
         <button data-right>
-          <RightArrow width={50} height={50} />
+          <RightArrow />
         </button>
       </div>
     </header>
