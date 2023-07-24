@@ -1,4 +1,5 @@
 import { setupCarousels } from "./carousel";
+import { setupLogoAnimation } from "./logo";
 import { setupNewsletterWidget } from "./newsletter-widget";
 import { setupSidebars } from "./sidebars";
 import { setupNavs } from "./subnavs";
@@ -17,5 +18,6 @@ export function init() {
     setupSidebars();
     setupNavs();
     setupNewsletterWidget();
+    setupLogoAnimation();
   });
 }

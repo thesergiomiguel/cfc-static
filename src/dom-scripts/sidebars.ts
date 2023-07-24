@@ -91,8 +91,6 @@ export function setupSidebars() {
 
     const target = document.getElementById(id);
 
-    console.log(target);
-
     element.addEventListener("click", () => toggle(target));
   });
 
