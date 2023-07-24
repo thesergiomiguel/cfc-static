@@ -1,5 +1,6 @@
 @use "css/theme";
 @use "css/settings";
+@use "css/breakpoints";
 @use "css/functions" as fx;
 @use "css/mixins" as mx;
 
@@ -24,6 +25,19 @@
   margin-inline: auto;
   padding: fx.rem(25) fx.rem(30);
   font-size: fx.rem(25);
+
+  &[data-is-dismissed],
+  &[data-is-intersecting="1"] {
+    @include mx.lg-up {
+      display: none;
+    }
+  }
+
+  &[data-has-completed] {
+    @include mx.below(breakpoints.$lg) {
+      position: static;
+    }
+  }
 
   &--visible {
     position: sticky;
@@ -68,6 +82,7 @@
 
   @include mx.lg-up {
     justify-content: flex-start;
+    position: sticky;
 
     &__content {
       flex: 0 0 50%;

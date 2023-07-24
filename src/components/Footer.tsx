@@ -2,7 +2,7 @@ import "./Footer.scss";
 
 export function Footer() {
   return (
-    <footer className="Footer">
+    <footer className="Footer" id="main-footer">
       <section className="Newsletter">
         <article className="Newsletter__wrapper">
           <header className="Newsletter__header">Newsletter</header>

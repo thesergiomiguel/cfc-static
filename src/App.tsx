@@ -9,7 +9,6 @@ import { init } from "./dom-scripts/on-dom-content-loaded";
 import { NewsletterWidget } from "./components/NewsletterWidget";
 
 // TODO:
-// newsletter widget
 // register sidebar
 // logo sidebar toggle (spin + close)
 

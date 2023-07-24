@@ -1,4 +1,5 @@
 import { setupCarousels } from "./carousel";
+import { setupNewsletterWidget } from "./newsletter-widget";
 import { setupSidebars } from "./sidebars";
 import { setupNavs } from "./subnavs";
 
@@ -15,5 +16,6 @@ export function init() {
     setupCarousels();
     setupSidebars();
     setupNavs();
+    setupNewsletterWidget();
   });
 }

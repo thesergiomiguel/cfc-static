@@ -3,7 +3,7 @@ import "./NewsletterWidget.scss";
 
 export function NewsletterWidget() {
   return (
-    <div className="NewsletterBar">
+    <div className="NewsletterBar" id="newsletter-widget">
       <header className="NewsletterBar__title">
         <h2>Newsletter</h2>
       </header>
