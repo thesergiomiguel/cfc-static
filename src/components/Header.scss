@@ -195,9 +195,12 @@
     padding-inline: fx.rem(15) fx.rem(34);
 
     &::after {
-      content: "+";
+      content: url("img/icons/add.svg");
+      width: fx.rem(50);
+      height: fx.rem(50);
       position: absolute;
       right: fx.rem(34);
+      top: 14%;
     }
   }
 
@@ -217,7 +220,7 @@
   &[data-subnav-state="1"] {
     .Subnav__title {
       &::after {
-        content: "-";
+        content: url("img/icons/remove.svg");
       }
     }
 
