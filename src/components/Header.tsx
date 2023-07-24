@@ -50,7 +50,14 @@ export function Header() {
               </li>
             </nav>
           </li>
-          <li className="Nav__item Nav__item--purple">Login/Join</li>
+          <li
+            className="Nav__item Nav__item--purple"
+            data-open-sidebar="sidebar-login"
+            data-open-delay="200"
+            data-close-sidebar="main-nav-menu"
+          >
+            Login/Join
+          </li>
         </menu>
       </nav>
     </header>

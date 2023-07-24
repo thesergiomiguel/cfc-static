@@ -7,10 +7,7 @@ import "./assets/scss/index.scss";
 import { useEffect } from "react";
 import { init } from "./dom-scripts/on-dom-content-loaded";
 import { NewsletterWidget } from "./components/NewsletterWidget";
-
-// TODO:
-// register sidebar
-// logo sidebar toggle (spin + close)
+import { LoginSidebar } from "./components/LoginSidebar";
 
 export function App() {
   useEffect(() => {
@@ -30,6 +27,7 @@ export function App() {
       <Footer />
       <NewsletterWidget />
 
+      <LoginSidebar />
       <div className="Sidebar__backdrop" />
     </BrowserRouter>
   );

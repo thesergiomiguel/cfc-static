@@ -1,0 +1,127 @@
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/theme";
+@use "css/components/sidebar";
+
+.Login {
+  @extend .Sidebar;
+
+  &__container {
+    padding-top: fx.rem(100);
+  }
+
+  &__input {
+    border: 0;
+    outline: 0;
+    font-size: fx.rem(25);
+    line-height: 1.2;
+    padding: fx.rem(18) fx.rem(15);
+    width: 100%;
+    background-color: transparent;
+    font-family: "Borna";
+
+    &:not(:last-of-type) {
+      border-top: 1px solid black;
+    }
+
+    &:last-of-type {
+      border-block: 1px solid black;
+    }
+  }
+
+  &__forgot {
+    margin-left: auto;
+    color: theme.$browngray;
+    text-decoration: underline;
+    font-size: fx.rem(12);
+    line-height: 1.75;
+    text-align: right;
+    padding-top: fx.rem(5);
+    padding-right: fx.rem(14);
+  }
+
+  &__remember {
+    display: block;
+    margin-block: fx.rem(30) fx.rem(10);
+    font-size: fx.rem(12);
+    line-height: 1.75;
+    text-align: center;
+
+    input[type="checkbox"] {
+      border: 1px solid black;
+      background-color: white;
+    }
+  }
+
+  &__submit {
+    // TODO: come on!
+    background-color: transparent;
+    border: 1px solid theme.$purple;
+    border-radius: 30px;
+    color: theme.$purple;
+    font-family: "Borna";
+    font-size: fx.rem(25);
+    line-height: 1.2;
+    padding: fx.rem(15) fx.rem(20);
+    display: block;
+    margin-inline: auto;
+  }
+
+  &__register {
+    margin-top: fx.rem(50);
+    font-size: fx.rem(25);
+    line-height: 1.2;
+    margin-left: fx.rem(15);
+    color: theme.$purple;
+
+    &-text {
+      color: black;
+      display: block;
+    }
+
+    &-link {
+      &::after {
+        content: " →";
+        position: static;
+      }
+    }
+  }
+
+  @include mx.sm-up {
+    &__container {
+      padding-top: fx.rem(175);
+    }
+
+    &__input {
+      font-size: fx.rem(32);
+      line-height: 1.31;
+      padding: fx.rem(30) fx.rem(35);
+    }
+
+    &__forgot {
+      padding-top: fx.rem(10);
+      padding-right: fx.rem(16);
+    }
+
+    &__remember {
+      margin-top: fx.rem(52);
+
+      input[type="checkbox"] {
+        border-color: theme.$purple;
+      }
+    }
+
+    &__submit {
+      font-size: fx.rem(32);
+      line-height: 1.31;
+      padding: fx.rem(20) fx.rem(30);
+      border-radius: 39px;
+    }
+
+    &__register {
+      font-size: fx.rem(32);
+      line-height: 1.31;
+      margin-left: fx.rem(35);
+    }
+  }
+}
