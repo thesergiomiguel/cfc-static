@@ -1,3 +1,6 @@
+import { ReactComponent as RightArrow } from "img/icons/right.svg";
+import { ReactComponent as LeftArrow } from "img/icons/left.svg";
+
 type Props = {
   title: string;
   distance?: number | "block";
@@ -15,8 +18,12 @@ export function SectionHeaderWithScroll(props: Props) {
         data-distance={props.distance ?? 1000}
         data-target={props.targetId}
       >
-        <button data-left>←</button>
-        <button data-right>→</button>
+        <button data-left>
+          <LeftArrow width={50} height={50} />
+        </button>
+        <button data-right>
+          <RightArrow width={50} height={50} />
+        </button>
       </div>
     </header>
   );

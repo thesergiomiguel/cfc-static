@@ -28,7 +28,11 @@
       cursor: pointer;
       background: transparent;
       padding: 0;
-      font-family: "Borna";
+      width: fx.rem(40);
+      height: fx.rem(40);
+      overflow: hidden;
+      position: relative;
+      top: 0.5rem;
 
       &,
       &:active {
