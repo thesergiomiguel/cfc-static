@@ -5,7 +5,7 @@ import { Podcasts } from "./Podcasts";
 
 export function Editorial() {
   return (
-    <main className="Editorial">
+    <main className="EditorialPage">
       <Blog />
       <Events />
       <Podcasts />

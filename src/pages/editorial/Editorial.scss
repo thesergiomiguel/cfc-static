@@ -1,2 +1,17 @@
-.Editorial {
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.EditorialPage {
+  .PodcastsSection {
+    .PageSection__content {
+      padding-block: fx.rem(30);
+    }
+
+    @include mx.lg-up {
+      .PageSection__content {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
 }
