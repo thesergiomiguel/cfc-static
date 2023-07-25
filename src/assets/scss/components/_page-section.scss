@@ -1,0 +1,37 @@
+@use "css/components/containers";
+@use "css/mixins" as mx;
+@use "css/functions" as fx;
+
+.PageSection {
+  margin-bottom: fx.rem(70);
+
+  &__title {
+    @include mx.text(25, 1.2);
+
+    text-transform: uppercase;
+    margin-bottom: fx.rem(5);
+  }
+
+  &__header {
+    border-bottom: 1px solid black;
+  }
+
+  &__content {
+    padding-block: fx.rem(15) fx.rem(20);
+  }
+
+  &__footer {
+    @include mx.text(16, 1.31);
+
+    padding-top: fx.rem(10);
+    border-top: 1px solid black;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  &__content,
+  &__footer,
+  &__header {
+    @extend .wide-container;
+  }
+}
