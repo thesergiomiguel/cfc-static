@@ -17,6 +17,11 @@
   }
 }
 
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 // Breakpoints and media queries
 @mixin below($w) {
   @media (max-width: $w) {

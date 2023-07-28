@@ -145,6 +145,7 @@
   list-style: none;
 
   &__item {
+    @include mx.smooth;
     @include mx.text(25, 1.2, normal, black);
 
     padding-block: fx.rem(18) fx.rem(16);
