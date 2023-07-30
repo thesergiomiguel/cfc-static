@@ -39,25 +39,27 @@ export function Footer() {
         </nav>
 
         <nav className="Footer__navs--social">
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/callforcurators/">Facebook</a>
-            </li>
-            <li>
-              <a href="https://instagram.com/call_for_curators">Instagram</a>
-            </li>
-            <li>
-              <a href="">TikTok</a>
-            </li>
-            <li>
-              <a href="http://twitter.com/CallforCurators">Twitter</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/company/call-for-curators/">
-                LinkedIn
-              </a>
-            </li>
-          </ul>
+          <div>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/callforcurators/">Facebook</a>
+              </li>
+              <li>
+                <a href="https://instagram.com/call_for_curators">Instagram</a>
+              </li>
+              <li>
+                <a href="">TikTok</a>
+              </li>
+              <li>
+                <a href="http://twitter.com/CallforCurators">Twitter</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/call-for-curators/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </section>
     </footer>

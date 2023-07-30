@@ -36,7 +36,7 @@
     text-align: center;
 
     &--sitemap {
-      flex: 0 0 cols(2, 3);
+      flex: 0 0 fx.cols(2, 3);
       line-height: 1.31;
       position: relative;
       top: -4px; // so it lines down with &-social
@@ -52,7 +52,7 @@
       font-size: fx.rem(21);
 
       &-sitemap {
-        flex-basis: cols(3);
+        flex-basis: fx.cols(3);
       }
     }
 
@@ -72,7 +72,7 @@
       flex-direction: row;
       align-items: center;
 
-      nav > ul {
+      nav ul {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -90,14 +90,14 @@
     @include mx.from(settings.$max-content-width) {
       font-size: fx.rem(21);
 
-      nav > ul li:not(:last-child) {
+      nav ul li:not(:last-child) {
         margin-right: fx.rem(30);
       }
     }
   }
 
   // Disable all list stuff for navs within the footer.
-  nav > ul {
+  nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
