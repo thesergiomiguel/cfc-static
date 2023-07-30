@@ -45,25 +45,30 @@
     line-height: 2.58;
   }
 
+  @include mx.sm-up {
+    font-size: fx.rem(24);
+    font-size: clamp(1rem, -2rem + 8.333vw, 2rem);
+    line-height: 1.31;
+  }
+
   @include mx.md-up {
+    font-size: fx.rem(32);
+    line-height: 1.31;
+    margin: 0 auto;
+
     &__author {
       margin-top: fx.rem(15);
     }
   }
 
   @include mx.lg-up {
-    font-size: fx.rem(32);
-    margin: 0 auto;
-
     &__author {
       font-size: fx.rem(21);
       line-height: 1.48;
     }
-  }
 
-  &__content {
-    @include mx.lg-up {
-      max-width: cols(8);
+    &__content {
+      max-width: fx.cols(10);
       margin-inline: auto;
     }
   }
