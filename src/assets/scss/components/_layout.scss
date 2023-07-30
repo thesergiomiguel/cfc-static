@@ -11,7 +11,8 @@
   &__heading {
     @include mx.text(25, 1.2, normal, black);
 
-    margin: 0 0 fx.rem(16);
+    max-width: fx.cols(2, 3);
+    margin: 0 0 fx.rem(5);
     text-transform: uppercase;
   }
 
@@ -20,7 +21,7 @@
     display: none;
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: -#{fx.rem(5)};
 
     button {
       @include mx.text(32, 1, 400, theme.$browngray);
@@ -31,8 +32,6 @@
       width: fx.rem(40);
       height: fx.rem(40);
       overflow: hidden;
-      position: relative;
-      top: 0.5rem;
 
       > svg {
         width: fx.rem(50);
@@ -50,6 +49,8 @@
   @include mx.md-up {
     &__heading {
       @include mx.text(46, 1, normal, black);
+
+      margin-bottom: fx.rem(15);
     }
 
     &__carousel {
