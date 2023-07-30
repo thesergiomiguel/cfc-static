@@ -155,6 +155,10 @@
     &--purple {
       color: theme.$purple;
     }
+
+    > a:active {
+      text-decoration: underline !important;
+    }
   }
 
   @include mx.xl-up {
