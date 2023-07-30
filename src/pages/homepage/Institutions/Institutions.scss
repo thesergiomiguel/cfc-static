@@ -1,0 +1,69 @@
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+@use "css/components/containers";
+
+.Homepage .Institutions {
+  &__content {
+    @extend .wide-container;
+
+    padding-block: fx.rem(30);
+    border-top: 1px solid black;
+
+    @include mx.xxl-up {
+      padding-block: fx.rem(80);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+    img {
+      max-height: fx.rem(26);
+      max-width: fx.rem(102);
+      width: auto;
+      margin: fx.rem(6);
+    }
+  }
+
+  @include mx.lg-up {
+    &__container {
+      width: calc((10 / 12) * 100%);
+      margin-inline: auto;
+
+      img:not(:last-child) {
+        margin-right: fx.rem(20);
+      }
+    }
+  }
+
+  @include mx.xxl-up {
+    &__container {
+      flex-wrap: nowrap;
+      align-items: center;
+
+      img {
+        max-height: fx.rem(56);
+        max-width: fx.rem(170);
+
+        &:not(:last-child) {
+          margin-right: fx.rem(30);
+        }
+      }
+    }
+  }
+
+  @include mx.xxxl-up {
+    img {
+      max-height: fx.rem(56);
+      max-width: fx.rem(203);
+
+      &:not(:last-child) {
+        margin-right: fx.rem(47);
+      }
+    }
+  }
+}
