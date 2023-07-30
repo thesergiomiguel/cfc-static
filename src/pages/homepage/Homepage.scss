@@ -3,7 +3,7 @@
 @use "css/mixins" as mx;
 @use "css/components/containers";
 
-.Hero {
+.Homepage .Hero {
   @extend .wide-container;
 
   text-align: center;

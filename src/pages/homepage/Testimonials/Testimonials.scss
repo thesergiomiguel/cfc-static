@@ -4,7 +4,7 @@
 @use "css/mixins" as mx;
 @use "css/components/containers";
 
-.Testimonials {
+.Homepage .Testimonials {
   &__content {
     @extend .wide-container;
 

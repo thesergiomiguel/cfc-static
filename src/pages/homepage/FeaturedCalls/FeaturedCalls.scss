@@ -5,7 +5,7 @@
 @use "css/utils";
 @use "css/components/containers";
 
-.Featured {
+.Homepage .Featured {
   margin-bottom: fx.rem(66);
 
   @include mx.md-up {

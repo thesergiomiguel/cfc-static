@@ -4,7 +4,7 @@
 @use "css/utils";
 @use "css/theme";
 
-.Editorial {
+.Homepage .Editorial {
   margin-bottom: fx.rem(66);
 
   @include mx.md-up {
