@@ -6,10 +6,14 @@
 @use "css/components/containers";
 
 .Homepage .Featured {
-  margin-bottom: fx.rem(66);
+  margin-block: 0 fx.rem(66);
 
   @include mx.md-up {
-    margin-bottom: fx.rem(197);
+    margin-block: fx.rem(50) fx.rem(197);
+  }
+
+  @include mx.lg-up {
+    margin-top: fx.rem(100);
   }
 
   &__content {
