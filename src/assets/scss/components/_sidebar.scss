@@ -9,16 +9,17 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: -100%;
+  // left: 0;
+  // right: 100%;
   width: calc(100vw - fx.rem(74));
   opacity: 0;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-radius: 0 50px 50px 0;
   z-index: 11;
-  transform: scaleX(0);
-  transform-origin: left;
   overflow-y: scroll;
+  transition: left 325ms cubic-bezier(0.19, 1, 0.22, 1);
 
   @include mx.sm-up {
     width: fx.rem(478);
@@ -29,13 +30,12 @@
   }
 
   &--closing {
-    transition: transform 125ms linear, opacity 125ms linear;
+    transition: all 125ms ease-in;
   }
 
   &--open {
-    transition: transform 125ms linear, opacity 125ms linear;
     opacity: 1;
-    transform: scaleX(1);
+    left: 0;
   }
 }
 
