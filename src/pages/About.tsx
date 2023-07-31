@@ -1,3 +1,5 @@
+import "./About.scss";
+
 export function About() {
   return (
     <main className="AboutPage">

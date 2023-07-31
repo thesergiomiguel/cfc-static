@@ -1,0 +1,43 @@
+@use "css/components/containers";
+@use "css/functions" as fx;
+@use "css/mixins" as mx;
+
+.AboutPage .About {
+  @extend .wide-container;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: fx.rem(10);
+  grid-template-areas: "title content content";
+  line-height: 1.31;
+  font-weight: normal;
+  padding-block: fx.rem(35) fx.rem(84);
+
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.07692307692307698rem + 2.564102564102564vw, 2rem);
+
+  &__heading {
+    grid-area: title;
+
+    h1 {
+      font-weight: inherit;
+      font-size: inherit;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+
+    p {
+      margin-bottom: fx.rem(16);
+    }
+  }
+
+  @include mx.lg-up {
+    font-size: fx.rem(32);
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: ". title title content content content content content content ";
+    padding-block: fx.rem(165) fx.rem(200);
+  }
+}
