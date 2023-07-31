@@ -1,3 +1,6 @@
+import { blogPosts } from "../../mock-data/blog-posts";
+import { BlogPost } from "../../components/BlogPost";
+
 export function Blog() {
   return (
     <section className="PageSection">
@@ -5,9 +8,15 @@ export function Blog() {
         <h2 className="PageSection__title">Blog</h2>
       </header>
 
-      <main className="PageSection__content"></main>
+      <main className="PageSection__content">
+        {blogPosts.map((post, i) => (
+          <BlogPost key={i} {...post} />
+        ))}
+      </main>
 
-      <footer className="PageSection__footer">Load More ↓</footer>
+      <footer className="PageSection__footer">
+        <button>Load More ↓</button>
+      </footer>
     </section>
   );
 }
