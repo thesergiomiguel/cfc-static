@@ -21,7 +21,7 @@
     display: none;
     position: absolute;
     right: 0;
-    bottom: -#{fx.rem(5)};
+    bottom: 0;
 
     button {
       @include mx.text(32, 1, 400, theme.$browngray);
