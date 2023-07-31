@@ -1,13 +1,22 @@
+import { EventsPost } from "../../components/EventsPost";
+import { events } from "../../mock-data/events";
+
 export function Events() {
   return (
-    <section className="PageSection">
+    <section className="PageSection Events">
       <header className="PageSection__header">
         <h2 className="PageSection__title">Events</h2>
       </header>
 
-      <main className="PageSection__content"></main>
+      <main className="PageSection__content">
+        {events.map((event, i) => (
+          <EventsPost key={i} {...event} />
+        ))}
+      </main>
 
-      <footer className="PageSection__footer">Load More ↓</footer>
+      <footer className="PageSection__footer">
+        <button>Load More ↓</button>
+      </footer>
     </section>
   );
 }
