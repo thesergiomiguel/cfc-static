@@ -12,6 +12,7 @@ import { Editorial } from "./pages/editorial";
 import { Community } from "./pages/community";
 import { ContactSidebar } from "./components/Contact";
 import { About } from "./pages/About";
+import { Cookies } from "./pages/Cookies";
 
 export function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/editorial" element={<Editorial />} />
         <Route path="/about" element={<About />} />
+        <Route path="/cookies" element={<Cookies />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
 
