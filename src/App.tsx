@@ -10,8 +10,8 @@ import { NewsletterWidget } from "./components/NewsletterWidget";
 import { LoginSidebar } from "./components/LoginSidebar";
 import { Editorial } from "./pages/editorial";
 import { Community } from "./pages/community";
-import { About } from "./pages/search/About";
 import { ContactSidebar } from "./components/Contact";
+import { About } from "./pages/About";
 
 export function App() {
   useEffect(() => {
