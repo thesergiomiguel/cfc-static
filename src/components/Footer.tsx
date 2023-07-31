@@ -27,7 +27,7 @@ export function Footer() {
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a data-open-sidebar="contact-sidebar">Contact</a>
             </li>
             <li>
               <a href="/legal">Copyright & legal notices</a>

@@ -11,6 +11,7 @@ import { LoginSidebar } from "./components/LoginSidebar";
 import { Editorial } from "./pages/editorial";
 import { Community } from "./pages/community";
 import { About } from "./pages/search/About";
+import { ContactSidebar } from "./components/Contact";
 
 export function App() {
   useEffect(() => {
@@ -31,9 +32,11 @@ export function App() {
       </Routes>
 
       <Footer />
-      <NewsletterWidget />
 
+      <NewsletterWidget />
       <LoginSidebar />
+      <ContactSidebar />
+
       <div className="Sidebar__backdrop" />
     </BrowserRouter>
   );

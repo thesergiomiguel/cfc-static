@@ -1,0 +1,11 @@
+@use "css/components/sidebar";
+
+.Contact {
+  @extend .Sidebar;
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+  }
+}
