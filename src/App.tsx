@@ -10,6 +10,7 @@ import { NewsletterWidget } from "./components/NewsletterWidget";
 import { LoginSidebar } from "./components/LoginSidebar";
 import { Editorial } from "./pages/editorial";
 import { Community } from "./pages/community";
+import { About } from "./pages/search/About";
 
 export function App() {
   useEffect(() => {
@@ -24,9 +25,9 @@ export function App() {
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="/community" element={<Community />} />
-
-        <Route path="/registration" element={<Registration />} />
         <Route path="/editorial" element={<Editorial />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
 
       <Footer />
