@@ -2,6 +2,8 @@
 @use "css/mixins" as mx;
 
 .EditorialPage {
+  margin-top: 5rem;
+
   .PodcastsSection {
     .PageSection__content {
       padding-block: fx.rem(30);

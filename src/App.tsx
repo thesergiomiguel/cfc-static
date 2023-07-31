@@ -9,6 +9,7 @@ import { init } from "./dom-scripts/on-dom-content-loaded";
 import { NewsletterWidget } from "./components/NewsletterWidget";
 import { LoginSidebar } from "./components/LoginSidebar";
 import { Editorial } from "./pages/editorial";
+import { Community } from "./pages/community";
 
 export function App() {
   useEffect(() => {
@@ -22,6 +23,8 @@ export function App() {
 
       <Routes>
         <Route index element={<Homepage />} />
+        <Route path="/community" element={<Community />} />
+
         <Route path="/registration" element={<Registration />} />
         <Route path="/editorial" element={<Editorial />} />
       </Routes>
