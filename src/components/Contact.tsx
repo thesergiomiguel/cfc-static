@@ -2,7 +2,7 @@ import "./Contact.scss";
 
 export function ContactSidebar() {
   return (
-    <article className="Contact" id="contact-sidebar">
+    <aside className="Contact" id="contact-sidebar">
       <header className="Contact__heading">
         <h1>Contact</h1>
       </header>
@@ -17,6 +17,6 @@ export function ContactSidebar() {
           <input type="submit" value="Send" />
         </form>
       </main>
-    </article>
+    </aside>
   );
 }
